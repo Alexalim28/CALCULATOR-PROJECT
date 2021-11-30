@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Electrolize&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-color: #fbf9ff;
+  --primary-color: #1d3461;
+  --numbers-color: #4b8f8c;
+  --operands-color: #4e4b5c;
+  --clear-color: #bb342f;
+  --equal-color: #b08ea2;
+  --text-color: #fbfbfb;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: 1.5rem;
+}
+
+.calculator {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  width: 25%;
+  min-height: 500px;
+  margin: auto;
+  padding: 5px;
+  background-color: var(--primary-color);
+  transform: translateY(15vh);
+  border: 2px solid black;
+  box-shadow: 5px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+#display-prev {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  justify-self: end;
+  align-self: center;
+  font-family: "Electrolize", sans-serif;
+  color: orchid;
+}
+
+#display {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  justify-self: end;
+  align-self: center;
+  font-family: "Electrolize", sans-serif;
+}
+
+#clear {
+  grid-column: 1 / span 2;
+  grid-row: 3;
+  background-color: var(--clear-color);
+}
+
+#equals {
+  grid-column: 3;
+  grid-row: 7/ 7;
+  background-color: var(--equal-color);
+}
+
+.numbers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column: 1 / span 2;
+  grid-row: 4 / 8;
+}
+
+button {
+  color: var(--text-color);
+  border: 1px solid #000;
+  font-size: 1rem;
+  font-weight: 700;
+  outline: none;
+}
+
+button.number {
+  background-color: var(--numbers-color);
+}
+
+button#zero {
+  grid-column: 1 / span 2;
+}
+
+.operators {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-row: 3 / span 4;
+}
+
+button.operator {
+  background-color: var(--operands-color);
+}
